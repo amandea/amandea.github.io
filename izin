@@ -1,0 +1,14 @@
+#!/bin/bash
+red='\e[1;31m'
+green='\e[0;32m'
+NC='\e[0m'
+MYIP=$(curl -sS https://icanhazip.com);
+IZIN=$( curl -sS https://icanhazip.com | grep $MYIP )
+if [ $MYIP = $MYIP ]; then
+echo -e "${green}Permission Accepted...${NC}"
+else
+echo -e "${red}Permission Denied!${NC}";
+echo "Please Contact Admin"
+rm -f izin
+exit 0
+fi
